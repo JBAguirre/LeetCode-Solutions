@@ -1,9 +1,10 @@
+# Date Completed
+# June 26, 2026
+
 # Approach
 # Since a running sum is just adding what came before it, 
 # I took the sum from the previous index and 
 # add it to the current index number.
-
-
 
 # Time complexity:
 # O(N)
