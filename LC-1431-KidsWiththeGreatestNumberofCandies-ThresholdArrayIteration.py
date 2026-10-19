@@ -1,33 +1,29 @@
 # Date Completed
-# June 27, 2026
+# September 30, 2026
 
 # Approach
-# There were four conditions in order to create the results, 
-# thus I set the conditions as if-else statements.
+# To determine if a child can have the greatest number of candies, 
+# we set a threshold: max(candies) - extraCandies. 
+# Any child whose current candy count is less than this threshold fails the condition, 
+# as adding extraCandies will still leave them short of the current maximum.
 
 # Time complexity:
 # O(N)
 
 # Space complexity:
-# O(N)
+# O(1)
 
 # Code
 class Solution(object):
-    def fizzBuzz(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
-        answer = []
-
-        for i in range(1,n+1):
-            if i % 3 == 0 and i % 5 == 0:
-                answer.append("FizzBuzz")
-            elif i % 3 == 0:
-                answer.append("Fizz")
-            elif i % 5 == 0:
-                answer.append("Buzz")
+    def kidsWithCandies(self, candies, extraCandies):
+        largestNum = max(candies)
+        largestNum -= extraCandies
+        for i in range(len(candies)):
+            if candies[i] >= largestNum:
+                candies[i] = True
             else:
-                answer.append(str(i))
+                candies[i] = False
 
-        return answer
+        return candies
+
+        
