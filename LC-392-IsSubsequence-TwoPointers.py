@@ -2,12 +2,10 @@
 # October 19, 2026
 
 # Approach
-# The algoritm uses two pointers to iterate through the list. The first pointer, i, keeps track of the position 
-# where the next non-zero element should be placed. 
-# The second pointer, j, iterates through the entire list. 
-# When a non-zero element is found at index j, it is swapped with the element at index i, and i is incremented. 
-# This effectively moves all non-zero elements to the front of the list while maintaining their relative order, 
-# and all zeros are moved to the end.
+# The algorithm uses two pointers to iterate through the strings. 
+# The first pointer, i, keeps track of the position in string s, while the second pointer, j, iterates through string t. 
+# When a character in t matches the current character in s (s[i]), the pointer i is incremented to check for the next character 
+# in s. If all characters in s are found in t in order, the function returns True; otherwise, it returns False.
 
 # Time complexity:
 # O(N)
@@ -29,7 +27,4 @@ class Solution(object):
             if i < len(s) and s[i] == t[j]:
                 i += 1
             
-        return i == len(s)
-        
-        
-        
+        return i == len(s)  
